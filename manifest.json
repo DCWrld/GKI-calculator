@@ -1,0 +1,34 @@
+{
+  "idea": "An interactive calculator to determine the Glucose Ketone Index (GKI) with automatic glucose unit conversion (mg/dL to mmol/L) and integrated diagnostic insights.",
+  "visual_type": "interactive_calculator",
+  "data_specification": {
+    "data_structure": "A dashboard with three key sections: Input Panel, Calculation Result, and Insights Panel.",
+    "initial_values": {
+      "glucose_input": 90,
+      "glucose_unit": "mg_dL",
+      "ketone_input": 1.5
+    },
+    "derived_values": {
+      "glucose_mmol": "90 / 18.016 = 5.0",
+      "gki": "5.0 / 1.5 = 3.33"
+    },
+    "mapping": {
+      "gki_score": "Position on a colored spectrum scale (Red/High GKI to Green/Low GKI).",
+      "insight_text": "Content is dynamically selected from a lookup table based on the GKI score."
+    }
+  },
+  "user_controls": [
+    "Numeric Input: Glucose level (default 90).",
+    "Toggle/Select: Glucose unit (mg/dL or mmol/L).",
+    "Numeric Input: Ketone level (mmol/L) (default 1.5).",
+    "Button: 'Calculate GKI'."
+  ],
+  "interactivity": [
+    "Changing the glucose unit triggers automatic conversion and updates the input field and the GKI calculation.",
+    "Clicking 'Calculate GKI' updates the derived values, repositions the marker on the GKI scale, and refreshes the Insights Panel."
+  ],
+  "animation": [
+    "Smooth movement of the GKI marker on the scale.",
+    "Subtle fade-in transition for new insight text."
+  ]
+}
